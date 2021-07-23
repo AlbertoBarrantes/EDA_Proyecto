@@ -124,7 +124,9 @@ public final class TorreDeControl {
     public void imprimeAvionesVolando() {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nAVIONES VOLANDO"
-                + "\n" + insLAV.retornaLista()
+                //+ "\n" + insLAV.retornaLista()
+                //+ "\n" + insLAV.retornaListaOrdenada()
+                + "\n" + insLAV.retornaListaOrdenada()
                 + "★★★★★★★★★★★★★★★★★★★★★" );
     }
     public String imprimeAvionesVolando2() {
@@ -179,4 +181,16 @@ public final class TorreDeControl {
     
     
     
+    public Nodo retornaListaAvionesVolando(){
+        return insLAV.lista;
+    }
+    
+    
+    
+            
+            
+            
+            
+            
+            
 }

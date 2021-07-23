@@ -3,7 +3,7 @@ package Logica;
 
 public class ListaAvionesVolando {
     
-    Nodo lista;
+    public Nodo lista;
     
     public boolean listaVacia() {
         return lista == null;
@@ -33,6 +33,7 @@ public class ListaAvionesVolando {
     
     // PENDIENTE
     public void borraAvion(int id) { 
+        
         
         if( listaVacia() ) {
         }else {
@@ -94,4 +95,37 @@ public class ListaAvionesVolando {
         }
         return str;
     }
+    
+    
+    
+    public String retornaListaOrdenada() {
+//        
+//        Nodo temp = new Nodo();
+//        Nodo aux = lista;
+//        
+//        String str = "";
+//        
+//        if( !listaVacia() ) {
+//            while(aux != null){
+//                
+//                if (aux.piloto.compareToIgnoreCase(aux.sig.piloto) > 0) {
+//                    
+//                    temp = aux.sig;
+//                    aux = aux.sig;
+//                    t
+//                    
+////                    aux = aux.sig.sig;
+////                    aux.sig = aux.ant;
+//                    
+//                }
+//                
+//                str += " ✈ ID: " + aux.id + " Modelo: " + aux.modelo + " Piloto: " + aux.piloto + " Pasajeros: " + aux.pasajeros + " Sobrecargos: " + aux.sobrecargos + "\n";
+//                aux = aux.sig;
+//            }
+//        }
+        return "adsad"; // str;
+    }
+    
+    
+    
 }

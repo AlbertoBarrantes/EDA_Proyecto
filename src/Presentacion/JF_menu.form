@@ -121,6 +121,9 @@
           <Dimension value="[140, 50]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_listaAvionesEnVueloActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_info_avionesEnVuelo">
       <Properties>

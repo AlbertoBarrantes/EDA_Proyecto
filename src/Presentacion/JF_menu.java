@@ -7,7 +7,6 @@ public class JF_menu extends javax.swing.JFrame {
 
     private static final TorreDeControl insTDC = new TorreDeControl();
     
-    
     public JF_menu() {
         initComponents();
     }
@@ -45,6 +44,11 @@ public class JF_menu extends javax.swing.JFrame {
 
         jB_listaAvionesEnVuelo.setText("Ver Aviones en Vuelo");
         jB_listaAvionesEnVuelo.setPreferredSize(new java.awt.Dimension(140, 50));
+        jB_listaAvionesEnVuelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_listaAvionesEnVueloActionPerformed(evt);
+            }
+        });
 
         lbl_info_avionesEnVuelo.setText("...");
 
@@ -144,6 +148,16 @@ public class JF_menu extends javax.swing.JFrame {
         jB_iniciaSimulacion.setEnabled(false);
         
     }//GEN-LAST:event_jB_iniciaSimulacionActionPerformed
+
+    private void jB_listaAvionesEnVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_listaAvionesEnVueloActionPerformed
+        
+        JF_listaAvionesEnVuelo insLAV = new JF_listaAvionesEnVuelo();
+        insLAV.setLocationRelativeTo(null);
+        insLAV.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_jB_listaAvionesEnVueloActionPerformed
 
     /**
      * @param args the command line arguments
