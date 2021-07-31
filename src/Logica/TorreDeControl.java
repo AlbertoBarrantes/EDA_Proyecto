@@ -22,6 +22,7 @@ public final class TorreDeControl {
         imprimeAvionesPistaDespegue();
         imprimeAvionesHangar();
         imprimeTodosLosAviones();
+        insLAV.listaOrdenada();
     }
     
     
@@ -74,7 +75,7 @@ public final class TorreDeControl {
         insLA.agregaAvion("Airbus A330","Juan Mejia",160,6,6);
         insLA.agregaAvion("Boeing 737","Marcos Tamayo",123,5,7);
         insLA.agregaAvion("McDonnell Douglas MD-80","Emilio Iglesias",148,4,8);
-        insLA.agregaAvion("Embraer 170"," Miguel Verdu",202,3,9);
+        insLA.agregaAvion("Embraer 170","Miguel Verdu",202,3,9);
         insLA.agregaAvion("Airbus A320","Celestino Badia",195,4,10);
         insLA.agregaAvion("Boeing 747","Antoni Manzanares",171,4,11);
         insLA.agregaAvion("Boeing 777","Hector Guillen",195,4,12);
@@ -124,9 +125,9 @@ public final class TorreDeControl {
     public void imprimeAvionesVolando() {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nAVIONES VOLANDO"
-                //+ "\n" + insLAV.retornaLista()
+                + "\n" + insLAV.retornaLista()
                 //+ "\n" + insLAV.retornaListaOrdenada()
-                + "\n" + insLAV.retornaListaOrdenada()
+                //+ "\n" + insLAV.retornaListaOrdenada()
                 + "★★★★★★★★★★★★★★★★★★★★★" );
     }
     public String imprimeAvionesVolando2() {
@@ -182,7 +183,7 @@ public final class TorreDeControl {
     
     
     public Nodo retornaListaAvionesVolando(){
-        return insLAV.lista;
+        return insLAV.listaOrdenada();
     }
     
     

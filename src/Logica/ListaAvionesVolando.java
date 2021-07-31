@@ -8,7 +8,7 @@ public class ListaAvionesVolando {
     public boolean listaVacia() {
         return lista == null;
     } 
-      
+    
     
     
     public void agregaAvion(String modelo, String piloto, int pasajeros, int sobrecargos, int id) {
@@ -24,7 +24,6 @@ public class ListaAvionesVolando {
             while(aux.sig != null){
                 aux = aux.sig;
             }
-            
             aux.sig = nuevoNodo;
         }
     }
@@ -33,7 +32,6 @@ public class ListaAvionesVolando {
     
     // PENDIENTE
     public void borraAvion(int id) { 
-        
         
         if( listaVacia() ) {
         }else {
@@ -50,15 +48,11 @@ public class ListaAvionesVolando {
                 
                 aux = aux.sig;
             }
-            
         }
-        
-        
-        
     }
     
     
-
+    
     public String retornaLista() {
         
         String str = "";
@@ -98,32 +92,46 @@ public class ListaAvionesVolando {
     
     
     
-    public String retornaListaOrdenada() {
-//        
-//        Nodo temp = new Nodo();
-//        Nodo aux = lista;
-//        
-//        String str = "";
-//        
-//        if( !listaVacia() ) {
-//            while(aux != null){
-//                
-//                if (aux.piloto.compareToIgnoreCase(aux.sig.piloto) > 0) {
-//                    
-//                    temp = aux.sig;
-//                    aux = aux.sig;
-//                    t
-//                    
-////                    aux = aux.sig.sig;
-////                    aux.sig = aux.ant;
-//                    
-//                }
-//                
-//                str += " ✈ ID: " + aux.id + " Modelo: " + aux.modelo + " Piloto: " + aux.piloto + " Pasajeros: " + aux.pasajeros + " Sobrecargos: " + aux.sobrecargos + "\n";
-//                aux = aux.sig;
-//            }
-//        }
-        return "adsad"; // str;
+    public Nodo listaOrdenada(){
+        
+        Nodo temp1 = new Nodo();
+        Nodo aux;
+        Nodo aux2;
+        aux2 = lista;
+        
+        aux = lista;
+        while(aux != null){
+            
+            aux2 = lista;
+            while(aux2 != null){
+
+                if(aux2.sig != null){ 
+                    if((aux2.piloto).compareToIgnoreCase(aux2.sig.piloto) > 0){
+                        temp1.id = aux2.id;
+                        temp1.modelo = aux2.modelo;
+                        temp1.pasajeros = aux2.pasajeros;
+                        temp1.piloto = aux2.piloto;
+                        temp1.sobrecargos = aux2.sobrecargos;
+                        
+                        aux2.id = aux2.sig.id;
+                        aux2.modelo = aux2.sig.modelo;
+                        aux2.pasajeros = aux2.sig.pasajeros;
+                        aux2.piloto = aux2.sig.piloto;
+                        aux2.sobrecargos = aux2.sig.sobrecargos;
+                        
+                        aux2.sig.id = temp1.id;
+                        aux2.sig.modelo = temp1.modelo;
+                        aux2.sig.pasajeros = temp1.pasajeros;
+                        aux2.sig.piloto = temp1.piloto;
+                        aux2.sig.sobrecargos = temp1.sobrecargos;
+                    }
+                }
+                aux2 = aux2.sig;
+            }
+            aux = aux.sig;
+        }
+        aux2=lista;
+        return aux2;
     }
     
     

@@ -9,6 +9,10 @@ public class JF_menu extends javax.swing.JFrame {
     
     public JF_menu() {
         initComponents();
+        btn_listaAvionesEnVuelo.setEnabled(false);
+        btn_pistaDespegue.setEnabled(false);
+        
+        
     }
 
     /**
@@ -21,7 +25,7 @@ public class JF_menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jB_iniciaSimulacion = new javax.swing.JButton();
-        jB_listaAvionesEnVuelo = new javax.swing.JButton();
+        btn_listaAvionesEnVuelo = new javax.swing.JButton();
         lbl_info_avionesEnVuelo = new javax.swing.JLabel();
         lbl_info_avionesEnPistaAterrizaje = new javax.swing.JLabel();
         lbl_info_avionesEnPistaDespegue = new javax.swing.JLabel();
@@ -31,6 +35,7 @@ public class JF_menu extends javax.swing.JFrame {
         lbl_text_avionesEnPistaDespegue = new javax.swing.JLabel();
         lbl_text_avionesEnHangar = new javax.swing.JLabel();
         lbl_info_estado = new javax.swing.JLabel();
+        btn_pistaDespegue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,11 +47,11 @@ public class JF_menu extends javax.swing.JFrame {
             }
         });
 
-        jB_listaAvionesEnVuelo.setText("Ver Aviones en Vuelo");
-        jB_listaAvionesEnVuelo.setPreferredSize(new java.awt.Dimension(140, 50));
-        jB_listaAvionesEnVuelo.addActionListener(new java.awt.event.ActionListener() {
+        btn_listaAvionesEnVuelo.setText("Ver Aviones en Vuelo");
+        btn_listaAvionesEnVuelo.setPreferredSize(new java.awt.Dimension(140, 50));
+        btn_listaAvionesEnVuelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_listaAvionesEnVueloActionPerformed(evt);
+                btn_listaAvionesEnVueloActionPerformed(evt);
             }
         });
 
@@ -68,16 +73,27 @@ public class JF_menu extends javax.swing.JFrame {
 
         lbl_info_estado.setText("...");
 
+        btn_pistaDespegue.setText("Pista de Despegue");
+        btn_pistaDespegue.setMaximumSize(new java.awt.Dimension(135, 23));
+        btn_pistaDespegue.setMinimumSize(new java.awt.Dimension(135, 23));
+        btn_pistaDespegue.setPreferredSize(new java.awt.Dimension(140, 50));
+        btn_pistaDespegue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pistaDespegueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jB_iniciaSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jB_listaAvionesEnVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jB_iniciaSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(btn_listaAvionesEnVuelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_pistaDespegue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -117,17 +133,18 @@ public class JF_menu extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbl_info_avionesEnPistaDespegue, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_text_avionesEnPistaDespegue))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl_text_avionesEnHangar)
-                            .addComponent(lbl_info_avionesEnHangar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lbl_text_avionesEnPistaDespegue)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jB_iniciaSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jB_listaAvionesEnVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(193, 193, 193)
+                        .addComponent(jB_iniciaSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_listaAvionesEnVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_text_avionesEnHangar)
+                        .addComponent(lbl_info_avionesEnHangar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_pistaDespegue, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(90, 90, 90)
                 .addComponent(lbl_info_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -146,10 +163,12 @@ public class JF_menu extends javax.swing.JFrame {
         lbl_info_avionesEnHangar.setText(insTDC.imprimeAvionesHangar2());
         
         jB_iniciaSimulacion.setEnabled(false);
+        btn_listaAvionesEnVuelo.setEnabled(true);
+        btn_pistaDespegue.setEnabled(true);
         
     }//GEN-LAST:event_jB_iniciaSimulacionActionPerformed
 
-    private void jB_listaAvionesEnVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_listaAvionesEnVueloActionPerformed
+    private void btn_listaAvionesEnVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listaAvionesEnVueloActionPerformed
         
         JF_listaAvionesEnVuelo insLAV = new JF_listaAvionesEnVuelo();
         insLAV.setLocationRelativeTo(null);
@@ -157,7 +176,13 @@ public class JF_menu extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_jB_listaAvionesEnVueloActionPerformed
+    }//GEN-LAST:event_btn_listaAvionesEnVueloActionPerformed
+
+    private void btn_pistaDespegueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pistaDespegueActionPerformed
+        JF_PistaDespegue insPD = new JF_PistaDespegue();
+        insPD.setLocationRelativeTo(null);
+        insPD.setVisible(true);
+    }//GEN-LAST:event_btn_pistaDespegueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,8 +227,9 @@ public class JF_menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_listaAvionesEnVuelo;
+    private javax.swing.JButton btn_pistaDespegue;
     private javax.swing.JButton jB_iniciaSimulacion;
-    private javax.swing.JButton jB_listaAvionesEnVuelo;
     private javax.swing.JLabel lbl_info_avionesEnHangar;
     private javax.swing.JLabel lbl_info_avionesEnPistaAterrizaje;
     private javax.swing.JLabel lbl_info_avionesEnPistaDespegue;
