@@ -185,6 +185,18 @@ public final class TorreDeControl {
     public Nodo retornaListaAvionesVolando(){
         return insLAV.listaOrdenada();
     }
+
+    public Nodo retornaListaPistaDespegue() {
+        return insCPD.lista;
+    }
+
+    public Nodo retornaPilaHangar() {
+        return insPA.lista;
+    }
+
+    public Nodo retornaListaPistaAterrizaje() {
+        return insCPA.lista;
+    }
     
     
     
