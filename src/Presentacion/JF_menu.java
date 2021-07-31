@@ -2,6 +2,7 @@
 package Presentacion;
 
 import Logica.TorreDeControl;
+import javax.swing.JOptionPane;
 
 public class JF_menu extends javax.swing.JFrame {
 
@@ -137,45 +138,55 @@ public class JF_menu extends javax.swing.JFrame {
         btn_ordenarAterrizar.setMaximumSize(new java.awt.Dimension(111, 23));
         btn_ordenarAterrizar.setMinimumSize(new java.awt.Dimension(111, 23));
         btn_ordenarAterrizar.setPreferredSize(new java.awt.Dimension(111, 23));
+        btn_ordenarAterrizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ordenarAterrizarActionPerformed(evt);
+            }
+        });
 
         btn_OrdenarDespegar.setText("Ordenar Despegar");
         btn_OrdenarDespegar.setMaximumSize(new java.awt.Dimension(111, 23));
         btn_OrdenarDespegar.setMinimumSize(new java.awt.Dimension(111, 23));
         btn_OrdenarDespegar.setPreferredSize(new java.awt.Dimension(111, 23));
+        btn_OrdenarDespegar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_OrdenarDespegarActionPerformed(evt);
+            }
+        });
 
         btn_moverAlHangar.setText("Mover al Hangar");
-        btn_moverAlHangar.setMaximumSize(new java.awt.Dimension(111, 23));
-        btn_moverAlHangar.setMinimumSize(new java.awt.Dimension(111, 23));
-        btn_moverAlHangar.setPreferredSize(new java.awt.Dimension(111, 23));
+        btn_moverAlHangar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_moverAlHangarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_OrdenarDespegar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_prepararDespegue, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_ordenarAterrizar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_moverAlHangar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                    .addComponent(btn_OrdenarDespegar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_ordenarAterrizar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_prepararDespegue, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_moverAlHangar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_prepararDespegue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_OrdenarDespegar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ordenarAterrizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_moverAlHangar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_moverAlHangar))
                 .addGap(30, 30, 30))
         );
 
@@ -245,9 +256,9 @@ public class JF_menu extends javax.swing.JFrame {
                             .addComponent(lbl_info_avionesEnPistaAterrizaje, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_text_avionesEnPistaAterrizaje))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl_info_avionesEnPistaDespegue, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_text_avionesEnPistaDespegue))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_text_avionesEnPistaDespegue)
+                            .addComponent(lbl_info_avionesEnPistaDespegue, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbl_text_avionesEnHangar)
@@ -275,14 +286,11 @@ public class JF_menu extends javax.swing.JFrame {
 
     private void jB_iniciaSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_iniciaSimulacionActionPerformed
         
-        lbl_info_estado.setText(" " + insTDC.creaBD() + " aviones agregados");
-        insTDC.distribuyeAviones();
-        insTDC.imprimeEnConsola();
+        //lbl_info_estado.setText(" " + insTDC.creaBD() + " aviones agregados");
+//        insTDC.distribuyeAviones();
+//        insTDC.imprimeEnConsola();
         
-        lbl_info_avionesEnVuelo.setText(insTDC.imprimeAvionesVolando2());
-        lbl_info_avionesEnPistaAterrizaje.setText(insTDC.imprimeAvionesPistaAterrizaje2());
-        lbl_info_avionesEnPistaDespegue.setText(insTDC.imprimeAvionesPistaDespegue2());
-        lbl_info_avionesEnHangar.setText(insTDC.imprimeAvionesHangar2());
+        llenaEtiquetasAviones();
         
         jB_iniciaSimulacion.setEnabled(false);
         btn_ver_AvionesEnVuelo.setEnabled(true);
@@ -331,8 +339,34 @@ public class JF_menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ver_pistaAterrizajeActionPerformed
 
     private void btn_prepararDespegueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prepararDespegueActionPerformed
-        // TODO add your handling code here:
+        insTDC.hangarAPistaDespegue();
+        llenaEtiquetasAviones();
     }//GEN-LAST:event_btn_prepararDespegueActionPerformed
+
+    private void btn_OrdenarDespegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_OrdenarDespegarActionPerformed
+        insTDC.despegar();
+        llenaEtiquetasAviones();
+        
+    }//GEN-LAST:event_btn_OrdenarDespegarActionPerformed
+
+    private void btn_ordenarAterrizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ordenarAterrizarActionPerformed
+
+        if(!insTDC.atterizarValida()){
+            
+            JF_AterrizarAvion insJFAA = new JF_AterrizarAvion();
+            insJFAA.setVisible(true);
+//        insTDC.aterrizar();
+//        llenaEtiquetasAviones();
+    
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay aviones en vuelo", "Mensaje", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btn_ordenarAterrizarActionPerformed
+
+    private void btn_moverAlHangarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_moverAlHangarActionPerformed
+        insTDC.DePistaAterrizajeAHangar();
+        llenaEtiquetasAviones();
+    }//GEN-LAST:event_btn_moverAlHangarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,6 +446,14 @@ private void deshabilitaBotones(){
         btn_OrdenarDespegar.setEnabled(false);
 }
 
+    public void llenaEtiquetasAviones() {
+        
+        lbl_info_avionesEnVuelo.setText(insTDC.imprimeAvionesVolando2());
+        lbl_info_avionesEnPistaAterrizaje.setText(insTDC.imprimeAvionesPistaAterrizaje2());
+        lbl_info_avionesEnPistaDespegue.setText(insTDC.imprimeAvionesPistaDespegue2());
+        lbl_info_avionesEnHangar.setText(insTDC.imprimeAvionesHangar2());
+    }
 
+    
 
 }

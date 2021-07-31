@@ -34,6 +34,7 @@ public class ListaAvionesVolando {
     public void borraAvion(int id) { 
         
         if( listaVacia() ) {
+            
         }else {
             
             Nodo aux = lista;
@@ -133,6 +134,75 @@ public class ListaAvionesVolando {
         aux2=lista;
         return aux2;
     }
+
+    
+    
+    public int getLength() {
+        
+        int contador = 0;
+        
+        if( listaVacia() ) {
+            return 0;
+        }else{
+            
+            
+            Nodo aux = lista;
+            
+            while(aux != null){
+                contador++;
+                aux = aux.sig;
+            }
+        }
+        return contador;
+    }
+    
+    
+    
+    public Nodo getByIndex(int index) {
+        
+        Nodo aux = lista;
+        Nodo nNull = new Nodo();
+        
+        if( listaVacia() ) {
+            return nNull;
+        }else{
+            for (int i = 0; i < index; i++) {
+                aux = aux.sig;
+            }
+            return aux;
+        }
+    }
+
+    public void deleteByIndex(int index) {
+        
+        if(lista != null){
+            if(lista.sig == null){
+                lista = null;
+            }else{
+                Nodo aux = lista;
+                
+                if(index == 0){
+                    lista = lista.sig;
+                }else{
+
+                    int contador = 0;
+                    while(contador != index-1){
+                        aux = aux.sig;
+                        contador++;
+                    }
+                    if(aux.sig.sig == null){
+                        aux.sig = null;
+                    }else{
+                        aux.sig = aux.sig.sig;
+                    }
+                }
+            }
+        }
+        
+        
+        
+    }
+    
     
     
     

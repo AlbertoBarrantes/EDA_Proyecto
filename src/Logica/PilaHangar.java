@@ -26,6 +26,51 @@ public class PilaHangar {
             aux.sig = nuevoNodo;
         }
     }
+    
+    
+    
+    public void eliminar() {
+        
+        if( !listaVacia() && lista.sig == null) {
+            lista = null;
+        }else {
+            
+            Nodo aux = lista;
+            
+            while(aux != null){
+                
+                if(aux.sig.sig == null){
+                    aux.sig = null;
+                }
+                aux = aux.sig;
+            }
+        }
+    }
+    
+    
+    
+    public Nodo retornaNodo() {
+        
+        Nodo aux = lista;
+            
+        if( !listaVacia() && lista.sig == null) {
+            return lista;
+        }else {
+            
+            
+            
+            while(aux != null){
+                
+                if(aux.sig.sig == null){
+                    return aux.sig;
+                }
+                aux = aux.sig;
+            }
+        }
+        return aux;
+    }
+    
+    
 
     public String retornaLista() {
         

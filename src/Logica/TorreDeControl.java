@@ -1,6 +1,9 @@
 
 package Logica;
 
+import Presentacion.JF_menu;
+import javax.swing.JOptionPane;
+
 public final class TorreDeControl {
     
     private static final ListaAviones insLA = new ListaAviones();
@@ -8,12 +11,21 @@ public final class TorreDeControl {
     private static final ColaPistaAterrizaje insCPA = new ColaPistaAterrizaje();
     private static final ColaPistaDespegue insCPD = new ColaPistaDespegue();
     private static final PilaHangar insPA = new PilaHangar();
+    private static final JF_menu insJFMenu = new JF_menu();
+    private static int ejecucion = 1;
     
     public TorreDeControl(){
         
+        if(ejecucion == 1){
+            creaBD();
+            distribuyeAviones();
+            imprimeEnConsola();
+            insJFMenu.setVisible(true); 
+        }
+        ejecucion++;
     }
     
-    
+
     
     public void imprimeEnConsola() {
         
@@ -22,7 +34,8 @@ public final class TorreDeControl {
         imprimeAvionesPistaDespegue();
         imprimeAvionesHangar();
         imprimeTodosLosAviones();
-        insLAV.listaOrdenada();
+        System.out.println("\n\n\n\n\n");
+        
     }
     
     
@@ -126,9 +139,7 @@ public final class TorreDeControl {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nAVIONES VOLANDO"
                 + "\n" + insLAV.retornaLista()
-                //+ "\n" + insLAV.retornaListaOrdenada()
-                //+ "\n" + insLAV.retornaListaOrdenada()
-                + "★★★★★★★★★★★★★★★★★★★★★" );
+                );
     }
     public String imprimeAvionesVolando2() {
         return insLAV.retornaLista2();
@@ -140,7 +151,7 @@ public final class TorreDeControl {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nAVIONES EN PISTA DE ATERRIZAJE"
                 + "\n" + insCPA.retornaLista()
-                + "★★★★★★★★★★★★★★★★★★★★★" );
+                );
     }
     public String imprimeAvionesPistaAterrizaje2() {
         return insCPA.retornaLista2();
@@ -152,7 +163,7 @@ public final class TorreDeControl {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nAVIONES EN PISTA DE DESPEGUE"
                 + "\n" + insCPD.retornaLista()
-                + "★★★★★★★★★★★★★★★★★★★★★" );
+                );
     }
     public String imprimeAvionesPistaDespegue2() {
         return insCPD.retornaLista2();
@@ -164,7 +175,7 @@ public final class TorreDeControl {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nAVIONES EN EL HANGAR"
                 + "\n" + insPA.retornaLista()
-                + "★★★★★★★★★★★★★★★★★★★★★" );
+                );
     }
     public String imprimeAvionesHangar2() {
         return insPA.retornaLista2();
@@ -177,13 +188,13 @@ public final class TorreDeControl {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nTODOS LOS AVIONES"
                 + "\n" + insLA.retornaLista()
-                + "★★★★★★★★★★★★★★★★★★★★★" );
+                );
     }
     
     
     
     public Nodo retornaListaAvionesVolando(){
-        return insLAV.listaOrdenada();
+        return insLAV.lista;
     }
 
     public Nodo retornaListaPistaDespegue() {
@@ -194,8 +205,99 @@ public final class TorreDeControl {
         return insPA.lista;
     }
 
+    
+    
     public Nodo retornaListaPistaAterrizaje() {
         return insCPA.lista;
+    }
+
+    
+    
+    public void despegar() {
+        
+        if(!insCPD.listaVacia()){
+            
+            insLAV.agregaAvion(insCPD.lista.modelo, insCPD.lista.piloto, insCPD.lista.pasajeros, insCPD.lista.sobrecargos, insCPD.lista.id);
+            insCPD.borrarAlInicio();
+            imprimeEnConsola();
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay aviones en la pista de despegue", "Mensaje", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    
+    
+    public void aterrizar(int index) {
+        
+        //System.out.println(index);
+        //System.out.println("ID: " + insLAV.getByIndex(index).id);
+        //index = 
+        
+        
+        if(!insLAV.listaVacia()){
+            
+            // agregar
+            Nodo nTemp = insLAV.getByIndex(index);
+            
+            insCPA.agregaAvion(nTemp.modelo, nTemp.piloto, nTemp.pasajeros, nTemp.sobrecargos, nTemp.id);
+            // borrar
+            insLAV.deleteByIndex(index);
+            imprimeEnConsola();
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay aviones en vuelo", "Mensaje", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+        
+    }
+    
+    public boolean atterizarValida(){
+        return insLAV.listaVacia();
+    }
+    
+    
+//    public int aterrizarGetIndex(int var){
+//        return var;
+//    }
+    
+    
+
+    public void hangarAPistaDespegue() {
+        
+        if(!insPA.listaVacia()){
+
+            insCPD.agregaAvion(insPA.retornaNodo().modelo, insPA.retornaNodo().piloto, insPA.retornaNodo().pasajeros, insPA.retornaNodo().sobrecargos, insPA.retornaNodo().id);
+            insPA.eliminar();
+            imprimeEnConsola();
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay aviones en el hangar", "Mensaje", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+    }
+
+    public void DePistaAterrizajeAHangar() {
+        
+        if(!insCPA.listaVacia()){
+
+            insPA.agregaAvion(insCPA.lista.modelo, insCPA.lista.piloto, insCPA.lista.pasajeros, insCPA.lista.sobrecargos, insCPA.lista.id);
+            insCPA.borrarAlInicio();
+            imprimeEnConsola();
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay aviones en la pista de aterrizaje", "Mensaje", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+    }
+
+    public int retornaTamAvionesVolando() {
+        return insLAV.getLength();
+    }
+
+    public void llenaEtiquetasAviones() {
+        
+        insJFMenu.llenaEtiquetasAviones();
+        
     }
     
     

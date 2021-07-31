@@ -26,7 +26,19 @@ public class ColaPistaAterrizaje  {
             aux.sig = nuevoNodo;
         }
     }
+    
+    
+    
+    public void borrarAlInicio() {
 
+        if( !listaVacia() ) {
+
+            lista = lista.sig;
+        }
+    }
+
+    
+    
     public String retornaLista() {
         
         String str = "";
@@ -63,4 +75,28 @@ public class ColaPistaAterrizaje  {
         }
         return str;
     }
+
+    
+    
+    public Nodo getNodeByIndex(int index) {
+        
+        Nodo nIndex = new Nodo();
+        
+        if( listaVacia() ) {
+            
+        }else{
+            
+            Nodo aux = lista;
+            
+            for (int i = 0; i < index; i++) {
+                nIndex = aux;
+                aux = aux.sig;
+            }
+            
+        }
+        return nIndex;
+    }
+    
+    
+    
 }

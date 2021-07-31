@@ -26,6 +26,28 @@ public class ColaPistaDespegue {
             aux.sig = nuevoNodo;
         }
     }
+    
+    
+    
+    public void borrarAlInicio() {
+        
+//        Nodo nuevoNodo = new Nodo(modelo,piloto,pasajeros,sobrecargos,id);
+        
+        if( !listaVacia() ) {
+            
+            lista = lista.sig;
+//            
+//            Nodo aux = lista;
+//            
+//            while(aux != null){
+//                aux = aux.sig;
+//            }
+//            
+//            aux.sig = nuevoNodo;
+        }
+    }
+    
+    
 
     public String retornaLista() {
         
