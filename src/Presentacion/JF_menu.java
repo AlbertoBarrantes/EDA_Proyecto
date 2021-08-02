@@ -191,6 +191,11 @@ public class JF_menu extends javax.swing.JFrame {
         );
 
         btn_agregaAviones.setText("Agregar más Aviones");
+        btn_agregaAviones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregaAvionesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -367,6 +372,16 @@ public class JF_menu extends javax.swing.JFrame {
         insTDC.DePistaAterrizajeAHangar();
         llenaEtiquetasAviones();
     }//GEN-LAST:event_btn_moverAlHangarActionPerformed
+
+    private void btn_agregaAvionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregaAvionesActionPerformed
+        
+        System.out.println("Hola");
+        
+        String modelo = "Boeing XXXXX";
+        insTDC.agregarAvionesManualmente(modelo);
+        
+        
+    }//GEN-LAST:event_btn_agregaAvionesActionPerformed
 
     /**
      * @param args the command line arguments

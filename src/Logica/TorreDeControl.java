@@ -194,7 +194,7 @@ public final class TorreDeControl {
     
     
     public Nodo retornaListaAvionesVolando(){
-        return insLAV.lista;
+        return insLAV.listaOrdenada();
     }
 
     public Nodo retornaListaPistaDespegue() {
@@ -297,6 +297,14 @@ public final class TorreDeControl {
     public void llenaEtiquetasAviones() {
         
         insJFMenu.llenaEtiquetasAviones();
+        
+    }
+
+    public void agregarAvionesManualmente(String modelo) {
+        
+        insLA.agregaAvion(modelo, "Jorge Gisbert", 155, 5, 26);
+        insLA.agregaAvion("Boeing YYY","Alberto Ali",205,4,27);
+
         
     }
     
