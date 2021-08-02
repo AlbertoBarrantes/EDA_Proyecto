@@ -1,4 +1,3 @@
-
 package Presentacion;
 
 import Logica.TorreDeControl;
@@ -7,7 +6,7 @@ import javax.swing.JOptionPane;
 public class JF_menu extends javax.swing.JFrame {
 
     private static final TorreDeControl insTDC = new TorreDeControl();
-    
+
     public JF_menu() {
         initComponents();
         deshabilitaBotones();
@@ -290,35 +289,33 @@ public class JF_menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jB_iniciaSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_iniciaSimulacionActionPerformed
-        
+
         //lbl_info_estado.setText(" " + insTDC.creaBD() + " aviones agregados");
 //        insTDC.distribuyeAviones();
 //        insTDC.imprimeEnConsola();
-        
         llenaEtiquetasAviones();
-        
+
         jB_iniciaSimulacion.setEnabled(false);
         btn_ver_AvionesEnVuelo.setEnabled(true);
         btn_ver_pistaDespegue.setEnabled(true);
         btn_ver_hangar.setEnabled(true);
         btn_ver_pistaAterrizaje.setEnabled(true);
         btn_agregaAviones.setEnabled(true);
-        
+
         btn_prepararDespegue.setEnabled(true);
         btn_ordenarAterrizar.setEnabled(true);
         btn_moverAlHangar.setEnabled(true);
         btn_OrdenarDespegar.setEnabled(true);
-        
+
     }//GEN-LAST:event_jB_iniciaSimulacionActionPerformed
 
     private void btn_ver_AvionesEnVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ver_AvionesEnVueloActionPerformed
-        
+
         JF_listaAvionesEnVuelo insLAV = new JF_listaAvionesEnVuelo();
         insLAV.setLocationRelativeTo(null);
         insLAV.setVisible(true);
-        
-        
-        
+
+
     }//GEN-LAST:event_btn_ver_AvionesEnVueloActionPerformed
 
     private void btn_ver_pistaDespegueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ver_pistaDespegueActionPerformed
@@ -338,7 +335,7 @@ public class JF_menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ver_hangarActionPerformed
 
     private void btn_ver_pistaAterrizajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ver_pistaAterrizajeActionPerformed
-        JF_PistaAterrizaje insCPA= new JF_PistaAterrizaje();
+        JF_PistaAterrizaje insCPA = new JF_PistaAterrizaje();
         insCPA.setLocationRelativeTo(null);
         insCPA.setVisible(true);
     }//GEN-LAST:event_btn_ver_pistaAterrizajeActionPerformed
@@ -351,19 +348,19 @@ public class JF_menu extends javax.swing.JFrame {
     private void btn_OrdenarDespegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_OrdenarDespegarActionPerformed
         insTDC.despegar();
         llenaEtiquetasAviones();
-        
+
     }//GEN-LAST:event_btn_OrdenarDespegarActionPerformed
 
     private void btn_ordenarAterrizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ordenarAterrizarActionPerformed
 
-        if(!insTDC.atterizarValida()){
-            
+        if (!insTDC.atterizarValida()) {
+
             JF_AterrizarAvion insJFAA = new JF_AterrizarAvion();
             insJFAA.setVisible(true);
 //        insTDC.aterrizar();
 //        llenaEtiquetasAviones();
-    
-        }else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "No hay aviones en vuelo", "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_ordenarAterrizarActionPerformed
@@ -374,13 +371,11 @@ public class JF_menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_moverAlHangarActionPerformed
 
     private void btn_agregaAvionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregaAvionesActionPerformed
-        
-        System.out.println("Hola");
-        
-        String modelo = "Boeing XXXXX";
-        insTDC.agregarAvionesManualmente(modelo);
-        
-        
+        JF_AgregarManual insAAM = new JF_AgregarManual();
+        insAAM.setVisible(true);
+        insAAM.setLocationRelativeTo(null);
+
+
     }//GEN-LAST:event_btn_agregaAvionesActionPerformed
 
     /**
@@ -449,7 +444,7 @@ public class JF_menu extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_text_avionesEnVuelo;
     // End of variables declaration//GEN-END:variables
 
-private void deshabilitaBotones(){
+    private void deshabilitaBotones() {
         btn_ver_AvionesEnVuelo.setEnabled(false);
         btn_ver_pistaDespegue.setEnabled(false);
         btn_ver_hangar.setEnabled(false);
@@ -459,16 +454,14 @@ private void deshabilitaBotones(){
         btn_ordenarAterrizar.setEnabled(false);
         btn_moverAlHangar.setEnabled(false);
         btn_OrdenarDespegar.setEnabled(false);
-}
+    }
 
     public void llenaEtiquetasAviones() {
-        
+
         lbl_info_avionesEnVuelo.setText(insTDC.imprimeAvionesVolando2());
         lbl_info_avionesEnPistaAterrizaje.setText(insTDC.imprimeAvionesPistaAterrizaje2());
         lbl_info_avionesEnPistaDespegue.setText(insTDC.imprimeAvionesPistaDespegue2());
         lbl_info_avionesEnHangar.setText(insTDC.imprimeAvionesHangar2());
     }
-
-    
 
 }
