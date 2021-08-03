@@ -154,8 +154,14 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_Pasajeros">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_PasajerosKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_Sobrecargos">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_SobrecargosKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_Piloto">
         </Component>
@@ -205,6 +211,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_id">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_idKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

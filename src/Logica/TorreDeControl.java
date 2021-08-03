@@ -285,7 +285,7 @@ public final class TorreDeControl {
                 insCPD.agregaAvion(modelo, nombre, pasajeros, sobrecargos, id);
                 break;
             case "MLV":
-                insCPD.agregaAvion(modelo, nombre, pasajeros, sobrecargos, id);
+                insLAV.agregaAvion(modelo, nombre, pasajeros, sobrecargos, id);
                 break;
 
         }

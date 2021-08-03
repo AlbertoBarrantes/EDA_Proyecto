@@ -11,6 +11,7 @@ import Logica.ListaAviones;
 import Logica.ListaAvionesVolando;
 import Logica.PilaHangar;
 import Logica.TorreDeControl;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -78,6 +79,18 @@ public class JF_AgregarManual extends javax.swing.JFrame {
 
         jLabel4.setText("Nombre del piloto");
 
+        txt_Pasajeros.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_PasajerosKeyTyped(evt);
+            }
+        });
+
+        txt_Sobrecargos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_SobrecargosKeyTyped(evt);
+            }
+        });
+
         btn_MoverHangar.setText("Mover al hangar");
         btn_MoverHangar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +127,12 @@ public class JF_AgregarManual extends javax.swing.JFrame {
         });
 
         jLabel5.setText("ID");
+
+        txt_id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_idKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -259,6 +278,31 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor rellene los campos", "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btn_DespegarAActionPerformed
+
+    private void txt_PasajerosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_PasajerosKeyTyped
+        if (txt_Pasajeros.getText().length() >= 3) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+        
+
+    }//GEN-LAST:event_txt_PasajerosKeyTyped
+
+    private void txt_SobrecargosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_SobrecargosKeyTyped
+        if (txt_Sobrecargos.getText().length() >= 1) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+        
+    }//GEN-LAST:event_txt_SobrecargosKeyTyped
+
+    private void txt_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_idKeyTyped
+        if (txt_id.getText().length() >= 2) {
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+        
+    }//GEN-LAST:event_txt_idKeyTyped
 
     /**
      * @param args the command line arguments
