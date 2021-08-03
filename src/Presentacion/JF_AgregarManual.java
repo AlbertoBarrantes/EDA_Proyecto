@@ -223,7 +223,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             insTDC.agregarAvionesManualmente(String.valueOf(BoxModelos.getSelectedItem()), Integer.parseInt(txt_Pasajeros.getText()), Integer.parseInt(txt_Sobrecargos.getText()), txt_Piloto.getText(), Integer.parseInt(txt_id.getText()), "MAH");
 
             limpiarcampos();
-
+            JOptionPane.showMessageDialog(null, "Avion agregado correctamente", "Mensaje", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Por favor rellene los campos", "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
@@ -236,7 +236,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             insTDC.agregarAvionesManualmente(String.valueOf(BoxModelos.getSelectedItem()), Integer.parseInt(txt_Pasajeros.getText()), Integer.parseInt(txt_Sobrecargos.getText()), txt_Piloto.getText(), Integer.parseInt(txt_id.getText()), "agre");
 
             limpiarcampos();
-
+            JOptionPane.showMessageDialog(null, "Avion agregado correctamente", "Mensaje", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Por favor rellene los campos", "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
@@ -248,7 +248,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             insTDC.agregarAvionesManualmente(String.valueOf(BoxModelos.getSelectedItem()), Integer.parseInt(txt_Pasajeros.getText()), Integer.parseInt(txt_Sobrecargos.getText()), txt_Piloto.getText(), Integer.parseInt(txt_id.getText()), "PDA");
 
             limpiarcampos();
-
+            JOptionPane.showMessageDialog(null, "Avion agregado correctamente", "Mensaje", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Por favor rellene los campos", "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
@@ -261,7 +261,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             insTDC.agregarAvionesManualmente(String.valueOf(BoxModelos.getSelectedItem()), Integer.parseInt(txt_Pasajeros.getText()), Integer.parseInt(txt_Sobrecargos.getText()), txt_Piloto.getText(), Integer.parseInt(txt_id.getText()), "MPD");
 
             limpiarcampos();
-
+            JOptionPane.showMessageDialog(null, "Avion agregado correctamente", "Mensaje", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Por favor rellene los campos", "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
@@ -273,6 +273,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             insTDC.agregarAvionesManualmente(String.valueOf(BoxModelos.getSelectedItem()), Integer.parseInt(txt_Pasajeros.getText()), Integer.parseInt(txt_Sobrecargos.getText()), txt_Piloto.getText(), Integer.parseInt(txt_id.getText()), "MLV");
 
             limpiarcampos();
+            JOptionPane.showMessageDialog(null, "Avion agregado correctamente", "Mensaje", JOptionPane.ERROR_MESSAGE);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Por favor rellene los campos", "Mensaje", JOptionPane.ERROR_MESSAGE);
@@ -284,7 +285,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             evt.consume();
             Toolkit.getDefaultToolkit().beep();
         }
-        
+
 
     }//GEN-LAST:event_txt_PasajerosKeyTyped
 
@@ -293,7 +294,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             evt.consume();
             Toolkit.getDefaultToolkit().beep();
         }
-        
+
     }//GEN-LAST:event_txt_SobrecargosKeyTyped
 
     private void txt_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_idKeyTyped
@@ -301,7 +302,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
             evt.consume();
             Toolkit.getDefaultToolkit().beep();
         }
-        
+
     }//GEN-LAST:event_txt_idKeyTyped
 
     /**
