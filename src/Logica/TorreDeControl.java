@@ -73,31 +73,31 @@ public final class TorreDeControl {
 
     public int creaBD() {
 
-        insLA.agregaAvion("Boeing 747", "David Gisbert", 155, 5, 1);
-        insLA.agregaAvion("Boeing 777", "Jesus Ali", 205, 4, 2);
-        insLA.agregaAvion("Airbus A340", "Luciano Mayor", 177, 5, 3);
-        insLA.agregaAvion("Boeing 767", "Joaquin Velez", 220, 4, 4);
-        insLA.agregaAvion("Boeing 757", "Leonardo Valcarcel", 206, 3, 5);
-        insLA.agregaAvion("Airbus A330", "Juan Mejia", 160, 6, 6);
-        insLA.agregaAvion("Boeing 737", "Marcos Tamayo", 123, 5, 7);
-        insLA.agregaAvion("McDonnell Douglas MD-80", "Emilio Iglesias", 148, 4, 8);
-        insLA.agregaAvion("Embraer 170", "Miguel Verdu", 202, 3, 9);
-        insLA.agregaAvion("Airbus A320", "Celestino Badia", 195, 4, 10);
-        insLA.agregaAvion("Boeing 747", "Antoni Manzanares", 171, 4, 11);
-        insLA.agregaAvion("Boeing 777", "Hector Guillen", 195, 4, 12);
-        insLA.agregaAvion("Airbus A340", "Andres Villa", 166, 3, 13);
-        insLA.agregaAvion("Boeing 767", "Carlos Barbero", 144, 2, 14);
-        insLA.agregaAvion("Boeing 757", "Antoni Santamaria", 222, 5, 15);
-        insLA.agregaAvion("Airbus A330", "Jose Neira", 200, 5, 16);
-        insLA.agregaAvion("Boeing 737", "Jacobo Salgado", 160, 4, 17);
-        insLA.agregaAvion("McDonnell Douglas MD-80", "Ramon Vivas", 155, 3, 18);
-        insLA.agregaAvion("Embraer 170", "Roberto Tapia", 151, 3, 19);
-        insLA.agregaAvion("Airbus A320", "Jaime Duque", 153, 3, 20);
-        insLA.agregaAvion("Boeing 747", "Lorenzo Camino", 169, 3, 21);
-        insLA.agregaAvion("Boeing 777", "Felix Quintana", 174, 4, 22);
-        insLA.agregaAvion("Airbus A340", "Kevin Giraldo", 110, 3, 23);
-        insLA.agregaAvion("Boeing 767", "Adolfo Castañeda", 120, 2, 24);
-        insLA.agregaAvion("McDonnell Douglas MD-80", "Brahim Montoya", 111, 2, 25);
+        insLA.agregaAvion("Boeing 747", "David Gisbert", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 1);
+        insLA.agregaAvion("Boeing 777", "Jesus Ali", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 2);
+        insLA.agregaAvion("Airbus A340", "Luciano Mayor", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 3);
+        insLA.agregaAvion("Boeing 767", "Joaquin Velez", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 4);
+        insLA.agregaAvion("Boeing 757", "Leonardo Valcarcel", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 5);
+        insLA.agregaAvion("Airbus A330", "Juan Mejia", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 6);
+        insLA.agregaAvion("Boeing 737", "Marcos Tamayo", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 7);
+        insLA.agregaAvion("McDonnell Douglas MD-80", "Emilio Iglesias", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 8);
+        insLA.agregaAvion("Embraer 170", "Miguel Verdu", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 9);
+        insLA.agregaAvion("Airbus A320", "Celestino Badia", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 10);
+        insLA.agregaAvion("Boeing 747", "Antoni Manzanares", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 11);
+        insLA.agregaAvion("Boeing 777", "Hector Guillen", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 12);
+        insLA.agregaAvion("Airbus A340", "Andres Villa", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 13);
+        insLA.agregaAvion("Boeing 767", "Carlos Barbero", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 14);
+        insLA.agregaAvion("Boeing 757", "Antoni Santamaria", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 15);
+        insLA.agregaAvion("Airbus A330", "Jose Neira", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 16);
+        insLA.agregaAvion("Boeing 737", "Jacobo Salgado", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 17);
+        insLA.agregaAvion("McDonnell Douglas MD-80", "Ramon Vivas", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 18);
+        insLA.agregaAvion("Embraer 170", "Roberto Tapia", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 19);
+        insLA.agregaAvion("Airbus A320", "Jaime Duque", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 20);
+        insLA.agregaAvion("Boeing 747", "Lorenzo Camino", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 21);
+        insLA.agregaAvion("Boeing 777", "Felix Quintana", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 22);
+        insLA.agregaAvion("Airbus A340", "Kevin Giraldo", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 23);
+        insLA.agregaAvion("Boeing 767", "Adolfo Castañeda", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 24);
+        insLA.agregaAvion("McDonnell Douglas MD-80", "Brahim Montoya", cantidadAleatoriaPasajeros(), cantidadAleatoriaSobrecargos(), 25);
 
         // borra los nodos extras (25 - calculo random)
         int cont = 0;
@@ -123,6 +123,23 @@ public final class TorreDeControl {
         int randomRangePlanes = (int) (Math.random() * ((max + 1) - min) + min);
 
         return randomRangePlanes;
+    }
+
+    public int cantidadAleatoriaPasajeros() {
+        int max = 300;
+        int min = 90;
+        int randomRangePasajeros = (int) (Math.random() * ((max + 1) - min) + min);
+
+        return randomRangePasajeros;
+    }
+
+    public int cantidadAleatoriaSobrecargos() {
+        int max = 4;
+        int min = 9;
+        int randomRangeSobrecargos = (int) (Math.random() * ((max + 1) - min) + min);
+
+        return randomRangeSobrecargos;
+
     }
 
     public void imprimeAvionesVolando() {
