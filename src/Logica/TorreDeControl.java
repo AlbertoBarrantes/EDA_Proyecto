@@ -142,6 +142,23 @@ public final class TorreDeControl {
 
     }
 
+//    public static String[] cantidadAleatoriaNombres() {
+//        String[] nombresAleatorios = new String[1];
+//        String[] nombres = {"Andrea", "Julio", "Juan", "Cristiano", "Lionel", "Andres", "Patriio", "Jesus", "Luciano", "David", "Leonardo",
+//            "Celestino", "Antoni", "Carlos", "Jose", "Bob", "Hector", "Felix", "Miguel", "Ramon", "Adolfo", "Brahim", "Marcos", "Sofia", "Karen",
+//            "Madona", "Kimera", "Marlen", "Seidy", "Ismael", "Ayax", "Antonio"};
+//
+//        String[] apellidos = {"Mesén", "Camino", "Tapia", "Suque", "Santamaria", "Guillen", "Tamayo", "Barbero", "Verdu", "Neira", "Giraldo",
+//            "Villa", "Badia", "Casqueda", "Valcarcel", "Mejia", "Velez", "Iglesias", "Ali", "Manzanares", "Mayor", "Jimenez", "Nplol", "Androide", "Estrella",
+//            "Salgado", "Semedo", "Iniesta", "Tenorio", "Zabaleta", "Izquierdo"};
+//
+//        for (int i = 0; i < 1; i++) {
+//            nombresAleatorios[i] = nombres[(int) (Math.floor(Math.random() * ((nombres.length - 1) - 0 + 1) + 0))] 
+//                    + " " + apellidos[(int) (Math.floor(Math.random() * ((nombres.length - 1) - 0 + 1) + 0))];
+//        }
+//        return nombresAleatorios;
+//    }
+
     public void imprimeAvionesVolando() {
         System.out.println("★★★★★★★★★★★★★★★★★★★★★"
                 + "\nAVIONES VOLANDO"

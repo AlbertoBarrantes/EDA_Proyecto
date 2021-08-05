@@ -7,6 +7,8 @@ package Presentacion;
 
 import Logica.Nodo;
 import Logica.TorreDeControl;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,6 +21,7 @@ public class JF_Hangar extends javax.swing.JFrame {
     
     public JF_Hangar() {
         initComponents();
+        setIconImage(getIconImage());
         llenaTabla(insTC.retornaPilaHangar());
     }
 
@@ -35,6 +38,7 @@ public class JF_Hangar extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Hangar");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,7 +132,12 @@ private void llenaTabla(Nodo lista) {
 
 
 
-
+    @Override
+    public Image getIconImage(){
+    
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
+        return retValue;
+    }
 
 
 

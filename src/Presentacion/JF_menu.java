@@ -1,7 +1,9 @@
 package Presentacion;
 
 import Logica.TorreDeControl;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import java.awt.Image;
 
 public class JF_menu extends javax.swing.JFrame {
 
@@ -10,6 +12,7 @@ public class JF_menu extends javax.swing.JFrame {
     public JF_menu() {
         initComponents();
         deshabilitaBotones();
+        setIconImage(getIconImage());
     }
 
     /**
@@ -44,6 +47,7 @@ public class JF_menu extends javax.swing.JFrame {
         btn_agregaAviones = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Simulador");
 
         jB_iniciaSimulacion.setText("Iniciar");
         jB_iniciaSimulacion.setPreferredSize(new java.awt.Dimension(140, 50));
@@ -418,6 +422,12 @@ public class JF_menu extends javax.swing.JFrame {
                 new JF_menu().setVisible(true);
             }
         });
+    }
+    @Override
+    public Image getIconImage(){
+    
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
+        return retValue;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

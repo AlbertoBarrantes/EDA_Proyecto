@@ -7,6 +7,8 @@ package Presentacion;
 
 import Logica.Nodo;
 import Logica.TorreDeControl;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +22,7 @@ public class JF_PistaAterrizaje extends javax.swing.JFrame {
     
     public JF_PistaAterrizaje() {
         initComponents();
+        setIconImage(getIconImage());
         llenaTabla(insTC.retornaListaPistaAterrizaje());
     }
 
@@ -36,6 +39,7 @@ public class JF_PistaAterrizaje extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Pista de Aterrizaje");
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -127,6 +131,11 @@ private void llenaTabla(Nodo lista) {
         }
     }
 
-
+    @Override
+    public Image getIconImage(){
+    
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
+        return retValue;
+    }
 
 }

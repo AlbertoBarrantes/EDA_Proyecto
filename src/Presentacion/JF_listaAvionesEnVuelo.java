@@ -3,6 +3,8 @@ package Presentacion;
 
 import Logica.Nodo;
 import Logica.TorreDeControl;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.table.DefaultTableModel;
 
 public class JF_listaAvionesEnVuelo extends javax.swing.JFrame {
@@ -11,6 +13,7 @@ public class JF_listaAvionesEnVuelo extends javax.swing.JFrame {
 
     public JF_listaAvionesEnVuelo() {
         initComponents();
+        setIconImage(getIconImage());
         llenaTabla(insTC.retornaListaAvionesVolando());        
     }
 
@@ -22,6 +25,7 @@ public class JF_listaAvionesEnVuelo extends javax.swing.JFrame {
         jT_listaAvionesEnVuelo = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cielo");
 
         jT_listaAvionesEnVuelo.setAutoCreateRowSorter(true);
         jT_listaAvionesEnVuelo.setModel(new javax.swing.table.DefaultTableModel(
@@ -116,6 +120,11 @@ public class JF_listaAvionesEnVuelo extends javax.swing.JFrame {
         }
     }
     
+        @Override
+    public Image getIconImage(){
     
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
+        return retValue;
+    }
     
 }

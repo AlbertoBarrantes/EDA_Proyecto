@@ -11,6 +11,7 @@ import Logica.ListaAviones;
 import Logica.ListaAvionesVolando;
 import Logica.PilaHangar;
 import Logica.TorreDeControl;
+import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
@@ -33,6 +34,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
      */
     public JF_AgregarManual() {
         initComponents();
+        setIconImage(getIconImage());
         BoxModelos.addItem("Boeing 747"); // Lista del drop menu de los modelos
         BoxModelos.addItem("Boeing 747-400");
         BoxModelos.addItem("Boeing 777");
@@ -70,6 +72,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
         txt_id = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agregar Avión");
 
         jLabel1.setText("Modelo");
 
@@ -211,7 +214,7 @@ public class JF_AgregarManual extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -345,6 +348,13 @@ public class JF_AgregarManual extends javax.swing.JFrame {
         txt_Sobrecargos.setText(null);
         txt_Piloto.setText(null);
         txt_id.setText(null);
+    }
+    
+        @Override
+    public Image getIconImage(){
+    
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
+        return retValue;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> BoxModelos;

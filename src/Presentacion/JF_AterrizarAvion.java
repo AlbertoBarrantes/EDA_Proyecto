@@ -5,8 +5,10 @@
  */
 package Presentacion;
 
+import java.awt.Image;
 import Logica.Nodo;
 import Logica.TorreDeControl;
+import java.awt.Toolkit;
 
 /**
  *
@@ -19,11 +21,9 @@ public class JF_AterrizarAvion extends javax.swing.JFrame {
 
     public JF_AterrizarAvion() {
         initComponents();
-        
+        setIconImage(getIconImage());
         llenaCB();
-        
-        
-        
+
     }
 
     /**
@@ -40,6 +40,7 @@ public class JF_AterrizarAvion extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Aterrizar Avión");
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Seleccione el avion que debe de aterrizar");
@@ -98,16 +99,13 @@ public class JF_AterrizarAvion extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         insTC.aterrizar(jComboBox1.getSelectedIndex());
         llenaCB();
         insTC.llenaEtiquetasAviones();
-        
+
         //insJFMenu.
-        
-        
-        
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -152,15 +150,22 @@ public class JF_AterrizarAvion extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void llenaCB() {
-        
+
         jComboBox1.removeAllItems();
-        
+
         Nodo aux = insTC.retornaListaAvionesVolando();
-            
-        while(aux != null){
+
+        while (aux != null) {
             jComboBox1.addItem("ID: " + aux.id + ",\t     Piloto: " + aux.piloto + ",\t     Modelo: " + aux.modelo);
             aux = aux.sig;
         }
-        
+
+    }
+    
+        @Override
+    public Image getIconImage(){
+    
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
+        return retValue;
     }
 }

@@ -3,6 +3,8 @@ package Presentacion;
 
 import Logica.Nodo;
 import Logica.TorreDeControl;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -12,6 +14,7 @@ public class JF_PistaDespegue extends javax.swing.JFrame {
 
     public JF_PistaDespegue() {
         initComponents();
+        setIconImage(getIconImage());
         llenaTabla(insTC.retornaListaPistaDespegue());
     }
 
@@ -23,6 +26,7 @@ public class JF_PistaDespegue extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Pista de Despegue");
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,7 +121,12 @@ private void llenaTabla(Nodo lista) {
 
 
 
-
+    @Override
+    public Image getIconImage(){
+    
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
+        return retValue;
+    }
 
 
 
