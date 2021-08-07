@@ -7,6 +7,7 @@ import Logica.ListaAviones;
 import Logica.ListaAvionesVolando;
 import Logica.Nodo;
 import Logica.PilaHangar;
+import Presentacion.JF_AgregarAleatorio;
 import Presentacion.JF_AterrizarAvion;
 import Presentacion.JF_Hangar;
 import Presentacion.JF_PistaAterrizaje;
@@ -14,7 +15,6 @@ import Presentacion.JF_PistaDespegue;
 import Presentacion.JF_menu;
 import Presentacion.JF_listaAvionesEnVuelo;
 import Presentacion.JF_AgregarManual;
-import javax.swing.JOptionPane;
 
 public final class TorreDeControl {
 
@@ -32,6 +32,7 @@ public final class TorreDeControl {
     private static final JF_listaAvionesEnVuelo insJFLAV = new JF_listaAvionesEnVuelo();
     private static final JF_AterrizarAvion insJFA = new JF_AterrizarAvion();
     private static final JF_AgregarManual insAAM = new JF_AgregarManual();
+    private static final JF_AgregarAleatorio insAAA = new JF_AgregarAleatorio();
     
     private static int ejecucion = 0;
 
@@ -45,10 +46,9 @@ public final class TorreDeControl {
         }
     }
     
-    public int AvionesAleatorios(){
+    public int AvionesAleatorios(String centinela){
         
         int cantAviones = numeroAleatorio(10, 1);
-        System.out.println(cantAviones + " generados aleatoriamente otra vez");
 
         String modelo = ""; 
         String piloto = "";
@@ -154,10 +154,15 @@ public final class TorreDeControl {
             }
             
             int id = IDLibre();
-            // agrega el avion a la lista general de aviones
-            insLA.agregaAvion(modelo, piloto, pasajeros, sobrecargos, id);
-            // distribuye aleatoriamente el avion en una de las 4 listas, vuelo, hangar, aterrizaje o despegue
-            distribuyeAvionesAleatoriamente(modelo, piloto, pasajeros, sobrecargos, id);
+            
+            if(centinela.equals("Aleatorio")){
+                // agrega el avion a la lista general de aviones
+                insLA.agregaAvion(modelo, piloto, pasajeros, sobrecargos, id);
+                // distribuye aleatoriamente el avion en una de las 4 listas, vuelo, hangar, aterrizaje o despegue
+                distribuyeAvionesAleatoriamente(modelo, piloto, pasajeros, sobrecargos, id);
+            }else{
+                distribuyeAvionesManualmente(modelo, pasajeros, sobrecargos, piloto, id, centinela);
+            }
         }
         return cantAviones;
     }
@@ -411,6 +416,11 @@ public final class TorreDeControl {
 
     public void actualizaEtiquetaID() {
         insAAM.actualizaEtiquetaID();
+    }
+
+    public void abreJFAgregaAleatorio() {
+        insAAA.setVisible(true);
+        insAAA.setLocationRelativeTo(null);
     }
 
 }

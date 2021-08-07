@@ -376,9 +376,10 @@ public final class JF_menu extends javax.swing.JFrame {
 
     private void btn_agregaAvionesAleatoriamenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregaAvionesAleatoriamenteActionPerformed
         
-        int cantidadAviones = insTC.AvionesAleatorios();
-        JOptionPane.showMessageDialog(null, cantidadAviones + " aviones distribuidos", "", JOptionPane.INFORMATION_MESSAGE);
-        insTC.actualizaInformacion();
+        insTC.abreJFAgregaAleatorio();
+//        int cantidadAviones = insTC.AvionesAleatorios();
+//        JOptionPane.showMessageDialog(null, cantidadAviones + " aviones distribuidos", "", JOptionPane.INFORMATION_MESSAGE);
+//        insTC.actualizaInformacion();
     }//GEN-LAST:event_btn_agregaAvionesAleatoriamenteActionPerformed
 
     /**
