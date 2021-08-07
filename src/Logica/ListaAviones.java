@@ -3,7 +3,7 @@ package Logica;
 
 public final class ListaAviones {
     
-    Nodo lista;
+    public Nodo lista;
     
     public ListaAviones() {
     }
@@ -11,7 +11,6 @@ public final class ListaAviones {
     public boolean listaVacia() {
         return lista == null;
     } 
-
     
     public void agregaAvion(String modelo, String piloto, int pasajeros, int sobrecargos, int id) {
         
@@ -31,21 +30,36 @@ public final class ListaAviones {
         }
     }
 
-    public String retornaLista() {
+        public int size(){
         
-        String str = "";
+        int cont = 0;
         
         if( listaVacia() ) {
-            str = "La lista está vacia\n";
+            return 0;
         }else{
             
             Nodo aux = lista;
             
+            
             while(aux != null){
-                str += " ✈ ID: " + aux.id + " Modelo: " + aux.modelo + " Piloto: " + aux.piloto + " Pasajeros: " + aux.pasajeros + " Sobrecargos: " + aux.sobrecargos + "\n";
+                cont++;
                 aux = aux.sig;
             }
         }
-        return str;
+        return cont;
+    }
+    
+    public Nodo getLastNode(){
+        
+        Nodo aux = lista;
+        
+        if( listaVacia() ) {
+            return null;
+        }else{
+            while(aux.sig!=null){
+                aux = aux.sig;
+            }
+            return aux;
+        }
     }
 }

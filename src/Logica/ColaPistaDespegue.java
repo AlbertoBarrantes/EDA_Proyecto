@@ -3,7 +3,7 @@ package Logica;
 
 public class ColaPistaDespegue {
     
-    Nodo lista;
+    public Nodo lista;
     
     public boolean listaVacia() {
         return lista == null;
@@ -27,48 +27,14 @@ public class ColaPistaDespegue {
         }
     }
     
-    
-    
     public void borrarAlInicio() {
-        
-//        Nodo nuevoNodo = new Nodo(modelo,piloto,pasajeros,sobrecargos,id);
         
         if( !listaVacia() ) {
             
             lista = lista.sig;
-//            
-//            Nodo aux = lista;
-//            
-//            while(aux != null){
-//                aux = aux.sig;
-//            }
-//            
-//            aux.sig = nuevoNodo;
         }
     }
-    
-    
 
-    public String retornaLista() {
-        
-        String str = "";
-        
-        if( listaVacia() ) {
-            str = "La lista está vacia\n";
-        }else{
-            
-            Nodo aux = lista;
-            
-            while(aux != null){
-                str += " ✈ ID: " + aux.id + " Modelo: " + aux.modelo + " Piloto: " + aux.piloto + " Pasajeros: " + aux.pasajeros + " Sobrecargos: " + aux.sobrecargos + "\n";
-                aux = aux.sig;
-            }
-        }
-        return str;
-    }
-    
-    
-    
     public String retornaLista2() {
         
         String str = "";
@@ -85,9 +51,4 @@ public class ColaPistaDespegue {
         }
         return str;
     }
-    
-    
-    
-    
-    
 }

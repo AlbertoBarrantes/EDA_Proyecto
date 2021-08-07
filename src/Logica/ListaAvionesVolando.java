@@ -9,8 +9,6 @@ public class ListaAvionesVolando {
         return lista == null;
     } 
     
-    
-    
     public void agregaAvion(String modelo, String piloto, int pasajeros, int sobrecargos, int id) {
         
         Nodo nuevoNodo = new Nodo(modelo,piloto,pasajeros,sobrecargos,id);
@@ -27,52 +25,6 @@ public class ListaAvionesVolando {
             aux.sig = nuevoNodo;
         }
     }
-    
-    
-    
-    // PENDIENTE
-    public void borraAvion(int id) { 
-        
-        if( listaVacia() ) {
-            
-        }else {
-            
-            Nodo aux = lista;
-            
-            while(aux.sig != null){
-                
-                if(aux.id == id){
-                    
-                    System.out.println("MATCH");
-                    aux = aux.sig.sig;
-                }
-                
-                aux = aux.sig;
-            }
-        }
-    }
-    
-    
-    
-    public String retornaLista() {
-        
-        String str = "";
-        
-        if( listaVacia() ) {
-            str = "La lista está vacia\n";
-        }else{
-            
-            Nodo aux = lista;
-            
-            while(aux != null){
-                str += " ✈ ID: " + aux.id + " Modelo: " + aux.modelo + " Piloto: " + aux.piloto + " Pasajeros: " + aux.pasajeros + " Sobrecargos: " + aux.sobrecargos + "\n";
-                aux = aux.sig;
-            }
-        }
-        return str;
-    }
-    
-    
     
     public String retornaLista2() {
         
@@ -91,14 +43,11 @@ public class ListaAvionesVolando {
         return str;
     }
     
-    
-    
     public Nodo listaOrdenada(){
         
         Nodo temp1 = new Nodo();
         Nodo aux;
         Nodo aux2;
-        aux2 = lista;
         
         aux = lista;
         while(aux != null){
@@ -134,8 +83,6 @@ public class ListaAvionesVolando {
         aux2=lista;
         return aux2;
     }
-
-    
     
     public int getLength() {
         
@@ -144,7 +91,6 @@ public class ListaAvionesVolando {
         if( listaVacia() ) {
             return 0;
         }else{
-            
             
             Nodo aux = lista;
             
@@ -155,8 +101,6 @@ public class ListaAvionesVolando {
         }
         return contador;
     }
-    
-    
     
     public Nodo getByIndex(int index) {
         
@@ -198,14 +142,6 @@ public class ListaAvionesVolando {
                 }
             }
         }
-        
-        
-        
     }
-
-
-    
-    
-    
     
 }

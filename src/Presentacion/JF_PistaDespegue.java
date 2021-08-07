@@ -2,7 +2,7 @@
 package Presentacion;
 
 import Logica.Nodo;
-import Logica.TorreDeControl;
+import Control.TorreDeControl;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.table.DefaultTableModel;
@@ -52,8 +52,8 @@ public class JF_PistaDespegue extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -100,10 +100,11 @@ public class JF_PistaDespegue extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 
-private void llenaTabla(Nodo lista) {
+public void llenaTabla(Nodo lista) {
         
         DefaultTableModel tModel = (DefaultTableModel) jTable1.getModel();
         Object rowData[] = new Object[6];
+        tModel.setRowCount(0);
         int cont = 1;
         Nodo aux = lista;
         while(aux != null){
@@ -120,25 +121,10 @@ private void llenaTabla(Nodo lista) {
     }
 
 
-
     @Override
     public Image getIconImage(){
     
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
         return retValue;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

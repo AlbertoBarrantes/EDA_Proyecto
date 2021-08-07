@@ -25,15 +25,16 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btn_ver_pistaAterrizaje" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jB_iniciaSimulacion" alignment="0" pref="175" max="32767" attributes="0"/>
+                  <Component id="btn_iniciaSimulacion" alignment="0" max="32767" attributes="0"/>
                   <Component id="btn_ver_AvionesEnVuelo" alignment="0" max="32767" attributes="0"/>
                   <Component id="btn_ver_pistaDespegue" alignment="0" max="32767" attributes="0"/>
                   <Component id="btn_ver_hangar" alignment="0" max="32767" attributes="0"/>
                   <Component id="btn_salir" alignment="0" max="32767" attributes="0"/>
                   <Component id="btn_agregaAviones" max="32767" attributes="0"/>
+                  <Component id="btn_agregaAvionesAleatoriamente" max="32767" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -43,11 +44,15 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="lbl_text_avionesEnHangar" min="-2" max="-2" attributes="0"/>
                                   <Component id="lbl_text_avionesEnPistaDespegue" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_text_totalDeAviones" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lbl_info_avionesEnPistaDespegue" pref="272" max="32767" attributes="0"/>
-                                  <Component id="lbl_info_avionesEnHangar" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lbl_info_avionesEnPistaDespegue" pref="272" max="32767" attributes="0"/>
+                                      <Component id="lbl_info_avionesEnHangar" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="lbl_info_totalDeAviones" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -63,16 +68,15 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" pref="433" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
-          <Component id="lbl_info_estado" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -80,16 +84,18 @@
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jB_iniciaSimulacion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="btn_iniciaSimulacion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btn_agregaAviones" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_agregaAvionesAleatoriamente" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Component id="btn_ver_AvionesEnVuelo" min="-2" pref="25" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lbl_info_avionesEnVuelo" alignment="3" max="32767" attributes="0"/>
                           <Component id="lbl_text_avionesEnVuelo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -109,7 +115,12 @@
                           <Component id="lbl_text_avionesEnHangar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_info_avionesEnHangar" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbl_text_totalDeAviones" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_info_totalDeAviones" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -121,20 +132,19 @@
                       <Component id="btn_ver_pistaAterrizaje" min="-2" pref="25" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Component id="btn_salir" min="-2" pref="25" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" pref="149" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Component id="lbl_info_estado" min="-2" pref="14" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jB_iniciaSimulacion">
+    <Component class="javax.swing.JButton" name="btn_iniciaSimulacion">
       <Properties>
         <Property name="text" type="java.lang.String" value="Iniciar"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -142,7 +152,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_iniciaSimulacionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_iniciaSimulacionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_ver_AvionesEnVuelo">
@@ -157,24 +167,12 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_info_avionesEnVuelo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_info_avionesEnPistaAterrizaje">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_info_avionesEnPistaDespegue">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_info_avionesEnHangar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_text_avionesEnVuelo">
       <Properties>
@@ -194,11 +192,6 @@
     <Component class="javax.swing.JLabel" name="lbl_text_avionesEnHangar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Aviones en Hangar:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbl_info_estado">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="..."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btn_ver_pistaDespegue">
@@ -276,7 +269,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Administraci&#xf3;n del Aviones"/>
+            <TitledBorder title="Administraci&#xf3;n de Aviones"/>
           </Border>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -384,10 +377,25 @@
     </Container>
     <Component class="javax.swing.JButton" name="btn_agregaAviones">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Agregar m&#xe1;s Aviones"/>
+        <Property name="text" type="java.lang.String" value="Agregar Aviones Manualmente"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_agregaAvionesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_text_totalDeAviones">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total de Aviones:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_info_totalDeAviones">
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_agregaAvionesAleatoriamente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Agregar Aviones Aleatoriamente"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_agregaAvionesAleatoriamenteActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

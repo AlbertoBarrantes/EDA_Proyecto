@@ -2,7 +2,7 @@
 package Presentacion;
 
 import Logica.Nodo;
-import Logica.TorreDeControl;
+import Control.TorreDeControl;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.table.DefaultTableModel;
@@ -59,8 +59,8 @@ public class JF_listaAvionesEnVuelo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -103,11 +103,11 @@ public class JF_listaAvionesEnVuelo extends javax.swing.JFrame {
     private javax.swing.JTable jT_listaAvionesEnVuelo;
     // End of variables declaration//GEN-END:variables
     
-    private void llenaTabla(Nodo lista) {
+    public void llenaTabla(Nodo lista) {
         
         DefaultTableModel tModel = (DefaultTableModel) jT_listaAvionesEnVuelo.getModel();
         Object rowData[] = new Object[5];
-        
+        tModel.setRowCount(0);
         Nodo aux = lista;
         while(aux != null){
             rowData[0] = aux.piloto;
@@ -126,5 +126,4 @@ public class JF_listaAvionesEnVuelo extends javax.swing.JFrame {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoAvion.png"));
         return retValue;
     }
-    
 }
